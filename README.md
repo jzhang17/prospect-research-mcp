@@ -1,9 +1,20 @@
 # MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@jzhang17/prospect-research-mcp)](https://smithery.ai/server/@jzhang17/prospect-research-mcp)
+
 A simple implementation of the Model Context Protocol (MCP) server with basic prompts and tools.
 
 ## Setup
 
+### Installing via Smithery
+
+To install prospect-research-mcp for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@jzhang17/prospect-research-mcp):
+
+```bash
+npx -y @smithery/cli install @jzhang17/prospect-research-mcp --client claude
+```
+
+### Manual Installation
 ```bash
 npm install
 ```
@@ -35,4 +46,4 @@ npm run dev
 
 ## References
 
-- [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) 
+- [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
