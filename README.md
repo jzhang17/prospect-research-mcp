@@ -1,5 +1,7 @@
 # MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@jzhang17/prospect-research-mcp)](https://smithery.ai/server/@jzhang17/prospect-research-mcp)
+
 A simple implementation of the Model Context Protocol (MCP) server with basic prompts and tools.
 
 ## Setup
