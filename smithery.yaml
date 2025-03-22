@@ -1,0 +1,40 @@
+# Smithery configuration file: https://smithery.ai/docs/deployments
+
+build:
+  dockerBuildPath: ../../
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - tavilyApiKey
+      - jinaApiKey
+      - search1apiKey
+    properties:
+      tavilyApiKey:
+        type: string
+        description: API key for Tavily search engine
+      jinaApiKey:
+        type: string
+        description: API key for Jina web scraping service
+      search1apiKey:
+        type: string
+        description: API key for Search1API batch search service
+      nodeEnv:
+        type: string
+        description: The Node environment (development, production, etc.)
+        default: production
+  commandFunction:
+    # A function that produces the CLI command to start the MCP on stdio.
+    |-
+    config=>({
+      command: 'node',
+      args: ['dist/index.js'],
+      env: {
+        TAVILY_API_KEY: config.tavilyApiKey,
+        JINA_API_KEY: config.jinaApiKey,
+        SEARCH1API_KEY: config.search1apiKey,
+        NODE_ENV: config.nodeEnv
+      }
+    }) 
